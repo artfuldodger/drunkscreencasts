@@ -1,9 +1,18 @@
 <h2><%= link_to video.title, video %></h2>
 
-<p><%= l video.published_at.to_date %></p>
+<div class="row">
+  <div class="col-md-8">
+    <iframe type="text/html" width="640" height="390"
+      src="http://www.youtube.com/embed/<%= video.youtube_id %>"
+      frameborder="0"></iframe>
+  </div>
+  <div class="col-md-4">
+    <p>
+      <%= l video.published_at.to_date %>
+      - <%= link_to video.user.name, user_path(video.user) %>
+    </p>
 
-<%= simple_format video.description %>
+    <%= simple_format video.description %>
+  </div>
+</div>
 
-<iframe type="text/html" width="640" height="390"
-  src="http://www.youtube.com/embed/<%= video.youtube_id %>"
-  frameborder="0"></iframe>
