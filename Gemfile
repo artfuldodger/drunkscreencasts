@@ -10,6 +10,8 @@ gem 'turbolinks'
 gem 'jbuilder'
 gem 'bootstrap-sass'
 gem 'rails_serve_static_assets'
+gem 'bcrypt-ruby'
+gem 'simple_form'
 
 group :doc do
   gem 'sdoc'
@@ -26,4 +28,5 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end

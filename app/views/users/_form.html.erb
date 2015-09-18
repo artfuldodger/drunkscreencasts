@@ -1,0 +1,9 @@
+<%= simple_form_for user, html: { class: 'form' } do |f| %>
+  <%= f.input :login, required: true %>
+  <%= f.input :password, required: true %>
+  <%= f.input :password_confirmation, required: true %>
+  <%= f.input :name %>
+  <%= f.input :email %>
+
+  <%= f.submit 'Sign Up', class: 'btn btn-default' %>
+<% end %>
