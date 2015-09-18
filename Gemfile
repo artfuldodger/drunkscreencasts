@@ -17,6 +17,11 @@ end
 
 group :development do
   gem 'spring'
+  gem 'guard-livereload', require: false
+end
+
+group :test do
+  gem 'guard-rspec', require: false
 end
 
 group :development, :test do
