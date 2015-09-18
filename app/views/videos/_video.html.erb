@@ -1,0 +1,9 @@
+<h2><%= link_to video.title, video %></h2>
+
+<p><%= l video.published_at.to_date %></p>
+
+<%= simple_format video.description %>
+
+<iframe type="text/html" width="640" height="390"
+  src="http://www.youtube.com/embed/<%= video.youtube_id %>"
+  frameborder="0"></iframe>

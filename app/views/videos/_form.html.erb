@@ -1,0 +1,9 @@
+<%= simple_form_for video, html: { class: 'form' } do |f| %>
+  <%= f.input :youtube_id, label: 'YouTube id',
+        hint: "For example, if the video URL is https://www.youtube.com/watch?v=6ScQbIluZqI, then the id is 6ScQbIluZqI" %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :published_at %>
+
+  <%= f.submit class: 'btn btn-default' %>
+<% end %>

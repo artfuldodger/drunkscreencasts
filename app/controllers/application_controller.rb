@@ -7,4 +7,12 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by_id(session[:user_id])
   end
   helper_method :current_user
+
+  private
+
+  def require_user
+    unless current_user
+      redirect_to sessions_url, error: 'Please sign in!'
+    end
+  end
 end

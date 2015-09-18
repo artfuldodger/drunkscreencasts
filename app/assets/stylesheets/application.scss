@@ -4,3 +4,14 @@
 #content-container {
   padding-top: 70px;
 }
+
+iframe {
+  max-width: 100%;
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+  iframe {
+    max-height: 400px;
+  }
+}
