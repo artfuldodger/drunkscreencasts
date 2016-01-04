@@ -6,6 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+password = SecureRandom.hex(20)
+
+user = User.where(login: 'jon').first_or_create(
+  password: password,
+  password_confirmation: password
+)
+
 videos = [
   {
     youtube_id: 'vLXGKNA4P_g',
@@ -30,7 +37,7 @@ videos = [
 ]
 
 videos.each do |video|
-  Video.where(youtube_id: video[:youtube_id]).create_with(
+  user.videos.where(youtube_id: video[:youtube_id]).create_with(
     title: video[:title],
     description: video[:description],
     published_at: video[:published_at]
